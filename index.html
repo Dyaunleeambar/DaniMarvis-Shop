@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DaniMarvis Shop — Ecommerce Local</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/main.css" />
+  <link rel="stylesheet" href="src/css/layout.css" />
+  <link rel="stylesheet" href="src/css/components.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="app-header" class="site-header" role="banner">
+    <div class="header-top">
+      <div class="container header-top-inner">
+
+        <!-- Logo -->
+        <a href="#/home" class="logo" aria-label="DaniMarvis Shop - Inicio">
+          <span class="logo-text">DaniMarvis</span><span class="logo-badge">Shop</span>
+        </a>
+
+        <!-- Search bar (desktop) -->
+        <form id="search-form" class="search-bar" role="search">
+          <select id="search-category" class="search-category" aria-label="Categoría">
+            <option value="">Todo</option>
+            <option value="Electrodomésticos">Electrodomésticos</option>
+            <option value="Cocina">Cocina</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Energía">Energía</option>
+            <option value="Climatización">Climatización</option>
+            <option value="Tecnología">Tecnología</option>
+          </select>
+          <input type="text" id="search-input" class="search-input" placeholder="Buscar productos, marcas y más..." autocomplete="off" />
+          <button type="submit" class="search-btn" aria-label="Buscar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </form>
+
+        <!-- User & Cart actions -->
+        <div class="header-actions">
+          <div id="user-section" class="user-section">
+            <!-- Filled by JS -->
+          </div>
+          <a href="#/cart" class="cart-btn" aria-label="Ver carrito">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span id="cart-badge" class="cart-badge hidden">0</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <nav class="header-nav" aria-label="Navegación principal">
+      <div class="container header-nav-inner">
+        <button class="nav-btn nav-btn--menu" onclick="window.location.hash='#/catalog'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Todo
+        </button>
+        <a href="#/home" class="nav-link">Inicio</a>
+        <a href="#/catalog" class="nav-link">Catálogo</a>
+        <a href="#/catalog?cat=Electrodom%C3%A9sticos" class="nav-link">Electrodomésticos</a>
+        <a href="#/catalog?cat=Cocina" class="nav-link">Cocina</a>
+        <a href="#/catalog?cat=Energ%C3%ADa" class="nav-link">Energía</a>
+        <a href="#/catalog?cat=Climatizaci%C3%B3n" class="nav-link">Climatización</a>
+        <a href="#/catalog?lowstock=true" class="nav-link nav-link--highlight">¡Pocas unidades!</a>
+        <span class="nav-sep">|</span>
+        <a href="#/admin/login" class="nav-link nav-link--admin" id="admin-nav-link">Zona Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN VIEW PORT -->
+  <main id="app-main" class="site-main" role="main">
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-spinner"></div>
+      <p class="loading-text font-mono">Iniciando IndexedDB...</p>
+    </div>
+  </main>
+
+  <!-- NOTIFICATION TOAST -->
+  <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <span class="logo-text footer-logo">DaniMarvis<span class="logo-badge">Shop</span></span>
+        <p class="footer-desc">Un prototipo robusto construido con HTML, CSS y JavaScript Vanilla. Persistencia local mediante IndexedDB. Sin frameworks, sin backend.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#/home">Inicio de la tienda</a></li>
+          <li><a href="#/catalog">Catálogo de productos</a></li>
+          <li><a href="#/cart">Ver mi carrito</a></li>
+          <li><a href="#/login">Iniciar sesión</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Área Técnica</h4>
+        <ul class="footer-links">
+          <li><a href="#/admin/login">Panel de Administrador</a></li>
+        </ul>
+        <p class="footer-creds">
+          Admin: <code>admin@danimarvis.com</code> / <code>admin</code><br/>
+          Cliente: <code>user@danimarvis.com</code> / <code>user</code>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>&copy; <span id="footer-year"></span> DaniMarvis Shop — SPA Vanilla JS con IndexedDB</span>
+        <span>IndexedDB v1 · LocalStorage activo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Modules (ES Modules) -->
+  <script type="module" src="src/js/core/app.js"></script>
+
+</body>
+</html>
