@@ -8,42 +8,43 @@
    ────────────────────────────────────── */
 
 :root {
-  /* Palette */
-  --c-bg:        #f0f2f5;
+  /* ── DaniMarvis Brand Palette ── */
+  --c-bg:        #faf8f7;
   --c-surface:   #ffffff;
-  --c-border:    #d5d9e0;
-  --c-border-lt: #eaecf0;
+  --c-border:    #e8deda;
+  --c-border-lt: #f2eeec;
 
-  /* Slate Scale */
-  --c-slate-950: #090e16;
-  --c-slate-900: #0f172a;
-  --c-slate-800: #1e293b;
-  --c-slate-700: #334155;
-  --c-slate-600: #475569;
-  --c-slate-500: #64748b;
-  --c-slate-400: #94a3b8;
-  --c-slate-300: #cbd5e1;
-  --c-slate-200: #e2e8f0;
-  --c-slate-100: #f1f5f9;
+  /* Carbon / Charcoal scale (replaces slate) */
+  --c-slate-950: #1a1210;
+  --c-slate-900: #221815;
+  --c-slate-800: #2e201c;
+  --c-slate-700: #4a3530;
+  --c-slate-600: #6b4f48;
+  --c-slate-500: #8c7068;
+  --c-slate-400: #b39b93;
+  --c-slate-300: #d4c2bc;
+  --c-slate-200: #e8deda;
+  --c-slate-100: #f6f1ef;
 
-  /* Accent — DaniMarvis amber */
-  --c-amber-500: #f59e0b;
-  --c-amber-400: #fbbf24;
-  --c-amber-300: #fcd34d;
-  --c-amber-200: #fde68a;
-  --c-amber-50:  #fffbeb;
+  /* Rose Mauve — DaniMarvis accent (replaces amber) */
+  --c-amber-500: #b8706a;   /* deep mauve */
+  --c-amber-400: #c9847a;   /* brand rose — primary CTA */
+  --c-amber-300: #dba49d;   /* light rose */
+  --c-amber-200: #edc9c4;   /* pale rose */
+  --c-amber-50:  #fdf4f3;   /* blush tint */
 
   /* Feedback */
-  --c-red-600:   #dc2626;
-  --c-red-50:    #fef2f2;
-  --c-green-600: #16a34a;
-  --c-green-50:  #f0fdf4;
-  --c-blue-600:  #2563eb;
-  --c-blue-50:   #eff6ff;
+  --c-red-600:   #c0392b;
+  --c-red-50:    #fdf0ef;
+  --c-green-600: #2d7a4f;
+  --c-green-50:  #f0faf4;
+  --c-blue-600:  #2a5ea8;
+  --c-blue-50:   #eff4fd;
 
-  /* Typography */
-  --font-ui:    'DM Sans', system-ui, sans-serif;
-  --font-mono:  'DM Mono', 'Fira Mono', monospace;
+  /* Typography — Cormorant Garamond display + Jost body */
+  --font-ui:      'Jost', 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono:    'DM Mono', 'Fira Mono', monospace;
 
   /* Font sizes */
   --fs-xs:   0.70rem;  /* 11.2px */
@@ -214,7 +215,7 @@ input, select, textarea {
   width: 40px;
   height: 40px;
   border: 3px solid var(--c-amber-200);
-  border-top-color: var(--c-amber-500);
+  border-top-color: var(--c-amber-400);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -255,7 +256,7 @@ input, select, textarea {
   flex-shrink: 0;
 }
 
-.toast.toast--error::before { background: var(--c-red-600); }
+.toast.toast--error::before   { background: var(--c-red-600); }
 .toast.toast--success::before { background: var(--c-green-600); }
 
 /* ── Section headings ──────────────────────────────────────── */

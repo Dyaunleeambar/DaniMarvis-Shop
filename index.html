@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DaniMarvis Shop — Ecommerce Local</title>
+  <title>DaniMarvis Shop — Tu Destino, Tu Tienda Online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="src/css/main.css" />
   <link rel="stylesheet" href="src/css/layout.css" />
   <link rel="stylesheet" href="src/css/components.css" />
@@ -19,7 +20,22 @@
 
         <!-- Logo -->
         <a href="#/home" class="logo" aria-label="DaniMarvis Shop - Inicio">
-          <span class="logo-text">DaniMarvis</span><span class="logo-badge">Shop</span>
+          <!-- Ícono: bolsa DM con corazón — reconstruido en SVG limpio -->
+          <span class="logo-icon">
+            <svg width="38" height="42" viewBox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Asa de la bolsa -->
+              <path d="M13 10 C13 5.5 16 3 19 3 C22 3 25 5.5 25 10" stroke="#221815" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <!-- Cuerpo de la bolsa -->
+              <rect x="4" y="10" width="30" height="28" rx="3" stroke="#221815" stroke-width="1.8" fill="white"/>
+              <!-- Letra D -->
+              <text x="8" y="30" font-family="'Cormorant Garamond', Georgia, serif" font-size="16" font-weight="600" fill="#221815">D</text>
+              <!-- Letra M en rose -->
+              <text x="18" y="30" font-family="'Cormorant Garamond', Georgia, serif" font-size="16" font-weight="600" fill="#c9847a">M</text>
+              <!-- Corazón pequeño -->
+              <path d="M27.5 21 C27.5 20.2 26.8 19.5 26 19.5 C25.5 19.5 25.1 19.75 24.85 20.1 C24.6 19.75 24.2 19.5 23.7 19.5 C22.9 19.5 22.2 20.2 22.2 21 C22.2 22.4 24.85 24 24.85 24 C24.85 24 27.5 22.4 27.5 21Z" fill="#c9847a"/>
+            </svg>
+          </span>
+          <span class="logo-text">DANI <span class="logo-marvis">MARVIS</span><span class="logo-badge">Shop</span></span>
         </a>
 
         <!-- Search bar (desktop) -->
@@ -66,7 +82,7 @@
         <a href="#/catalog?cat=Cocina" class="nav-link">Cocina</a>
         <a href="#/catalog?cat=Energ%C3%ADa" class="nav-link">Energía</a>
         <a href="#/catalog?cat=Climatizaci%C3%B3n" class="nav-link">Climatización</a>
-        <a href="#/catalog?lowstock=true" class="nav-link nav-link--highlight">¡Pocas unidades!</a>
+        <a href="#/catalog" class="nav-link nav-link--highlight">¡Pocas unidades!</a>
         <span class="nav-sep">|</span>
         <a href="#/admin/login" class="nav-link nav-link--admin" id="admin-nav-link">Zona Admin</a>
       </div>
@@ -88,8 +104,17 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="footer-col">
-        <span class="logo-text footer-logo">DaniMarvis<span class="logo-badge">Shop</span></span>
-        <p class="footer-desc">Un prototipo robusto construido con HTML, CSS y JavaScript Vanilla. Persistencia local mediante IndexedDB. Sin frameworks, sin backend.</p>
+        <div class="footer-logo">
+          <svg width="30" height="34" viewBox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M13 10 C13 5.5 16 3 19 3 C22 3 25 5.5 25 10" stroke="#c9847a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <rect x="4" y="10" width="30" height="28" rx="3" stroke="#c9847a" stroke-width="1.8" fill="none"/>
+            <text x="8" y="30" font-family="Georgia, serif" font-size="16" font-weight="600" fill="#fff">D</text>
+            <text x="18" y="30" font-family="Georgia, serif" font-size="16" font-weight="600" fill="#c9847a">M</text>
+            <path d="M27.5 21 C27.5 20.2 26.8 19.5 26 19.5 C25.5 19.5 25.1 19.75 24.85 20.1 C24.6 19.75 24.2 19.5 23.7 19.5 C22.9 19.5 22.2 20.2 22.2 21 C22.2 22.4 24.85 24 24.85 24 C24.85 24 27.5 22.4 27.5 21Z" fill="#c9847a"/>
+          </svg>
+          <span class="footer-logo-text">DANI <span class="logo-marvis">MARVIS</span></span>
+        </div>
+        <p class="footer-desc">Tu destino, tu tienda online. Ecommerce construido con HTML, CSS y JavaScript Vanilla. Persistencia local mediante IndexedDB.</p>
       </div>
       <div class="footer-col">
         <h4 class="footer-heading">Navegación</h4>

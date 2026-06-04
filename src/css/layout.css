@@ -1,5 +1,6 @@
 /* ============================================================
    layout.css — Header, Footer, Main Grid
+   DaniMarvis Shop — Boutique Fashion Style
    ============================================================ */
 
 /* ── Site wrapper ─────────────────────────────────────────── */
@@ -21,14 +22,22 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--c-slate-900);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  background: #ffffff;
+  color: var(--c-slate-800);
+  box-shadow: 0 1px 0 var(--c-border), 0 2px 16px rgba(180, 120, 110, 0.07);
+}
+
+/* Rose mauve top stripe */
+.site-header::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c-amber-200) 0%, var(--c-amber-400) 40%, var(--c-amber-300) 70%, var(--c-amber-200) 100%);
 }
 
 /* Top bar */
 .header-top {
-  background: var(--c-slate-900);
+  background: #ffffff;
   padding-block: 10px;
 }
 
@@ -41,60 +50,77 @@
 /* Logo */
 .logo {
   display: flex;
-  align-items: baseline;
-  gap: 2px;
+  align-items: center;
+  gap: 10px;
   flex-shrink: 0;
   user-select: none;
+  text-decoration: none;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .logo-text {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.04em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-slate-900);
+  letter-spacing: 0.02em;
   font-family: var(--font-ui);
+  line-height: 1;
+}
+
+.logo-text .logo-marvis {
+  color: var(--c-amber-400);
 }
 
 .logo-badge {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 700;
-  color: var(--c-amber-400);
-  background: rgba(251,191,36,0.15);
+  color: var(--c-amber-500);
+  background: var(--c-amber-50);
+  border: 1px solid var(--c-amber-200);
   border-radius: var(--r-sm);
-  padding: 1px 5px;
+  padding: 2px 6px;
   margin-left: 4px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 /* Search bar */
 .search-bar {
   flex: 1;
-  max-width: 600px;
+  max-width: 560px;
   display: flex;
   align-items: stretch;
-  border-radius: var(--r-md);
+  border-radius: var(--r-full);
   overflow: hidden;
-  background: #fff;
-  border: 2px solid transparent;
-  transition: border-color var(--t-fast);
+  background: var(--c-slate-100);
+  border: 1.5px solid var(--c-border);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
 }
 
 .search-bar:focus-within {
   border-color: var(--c-amber-400);
+  box-shadow: 0 0 0 3px rgba(201, 132, 122, 0.12);
+  background: #fff;
 }
 
 .search-category {
-  background: var(--c-slate-100);
+  background: transparent;
   border: none;
   border-right: 1px solid var(--c-border);
-  color: var(--c-slate-700);
+  color: var(--c-slate-600);
   font-size: var(--fs-xs);
   font-weight: 600;
   padding: 0 var(--space-3);
   cursor: pointer;
   outline: none;
   min-width: 90px;
+  font-family: var(--font-ui);
 }
 
 .search-input {
@@ -104,14 +130,15 @@
   padding: 9px var(--space-4);
   font-size: var(--fs-base);
   color: var(--c-slate-800);
-  background: #fff;
+  background: transparent;
+  font-family: var(--font-ui);
 }
 
 .search-input::placeholder { color: var(--c-slate-400); }
 
 .search-btn {
   background: var(--c-amber-400);
-  color: var(--c-slate-900);
+  color: #fff;
   padding: 0 var(--space-4);
   display: flex;
   align-items: center;
@@ -154,66 +181,69 @@
 .user-info__label {
   font-size: var(--fs-xs);
   font-weight: 700;
-  color: #fff;
+  color: var(--c-slate-700);
 }
 
 .btn-logout {
   padding: 8px;
-  background: var(--c-slate-800);
-  color: var(--c-slate-300);
+  background: var(--c-slate-100);
+  color: var(--c-slate-500);
   border-radius: var(--r-sm);
+  border: 1px solid var(--c-border);
   transition: color var(--t-fast), background var(--t-fast);
   display: flex;
   align-items: center;
 }
 
-.btn-logout:hover { color: #fff; background: var(--c-slate-700); }
+.btn-logout:hover { color: var(--c-slate-900); background: var(--c-slate-200); }
 
 .btn-login {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 7px var(--space-4);
-  background: var(--c-slate-800);
-  color: var(--c-slate-200);
+  background: var(--c-slate-100);
+  color: var(--c-slate-700);
   border-radius: var(--r-sm);
   font-size: var(--fs-xs);
   font-weight: 700;
-  border: 1px solid var(--c-slate-700);
+  border: 1px solid var(--c-border);
   transition: color var(--t-fast), background var(--t-fast);
   white-space: nowrap;
+  font-family: var(--font-ui);
 }
 
-.btn-login:hover { color: #fff; background: var(--c-slate-700); }
+.btn-login:hover { color: var(--c-slate-900); background: var(--c-slate-200); }
 
 .btn-admin {
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 6px var(--space-3);
-  background: rgba(251,191,36,0.15);
-  color: var(--c-amber-400);
-  border: 1px solid rgba(251,191,36,0.3);
+  background: var(--c-amber-50);
+  color: var(--c-amber-500);
+  border: 1px solid var(--c-amber-200);
   border-radius: var(--r-sm);
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.02em;
   transition: background var(--t-fast);
+  font-family: var(--font-ui);
 }
 
-.btn-admin:hover { background: rgba(251,191,36,0.25); }
+.btn-admin:hover { background: var(--c-amber-200); }
 
 /* Cart button */
 .cart-btn {
   position: relative;
   padding: 9px;
   background: var(--c-amber-400);
-  color: var(--c-slate-950);
+  color: #fff;
   border-radius: var(--r-md);
   display: flex;
   align-items: center;
   transition: background var(--t-fast), transform var(--t-fast);
-  box-shadow: var(--shadow-xs);
+  box-shadow: 0 2px 8px rgba(201, 132, 122, 0.3);
 }
 
 .cart-btn:hover { background: var(--c-amber-500); transform: translateY(-1px); }
@@ -223,7 +253,7 @@
   position: absolute;
   top: -6px;
   right: -6px;
-  background: var(--c-red-600);
+  background: var(--c-slate-800);
   color: #fff;
   font-family: var(--font-mono);
   font-size: 9px;
@@ -235,24 +265,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--c-slate-900);
+  border: 2px solid #fff;
   animation: bounce-sm 0.3s var(--ease);
 }
 
 /* Nav bar */
 .header-nav {
-  background: var(--c-slate-800);
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border-lt);
 }
 
 .header-nav-inner {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-1);
   overflow-x: auto;
   white-space: nowrap;
-  min-height: 36px;
-  padding-block: 6px;
+  min-height: 38px;
+  padding-block: 5px;
   scrollbar-width: none;
 }
 
@@ -262,49 +292,53 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: var(--c-slate-200);
+  color: var(--c-slate-700);
   font-size: var(--fs-xs);
   font-weight: 700;
-  padding: 3px var(--space-3);
+  padding: 4px var(--space-3);
   border-radius: var(--r-sm);
   transition: background var(--t-fast), color var(--t-fast);
+  font-family: var(--font-ui);
+  letter-spacing: 0.02em;
 }
 
-.nav-btn:hover, .nav-btn--menu:hover {
-  background: var(--c-slate-700);
-  color: #fff;
+.nav-btn:hover,
+.nav-btn--menu:hover {
+  background: var(--c-amber-50);
+  color: var(--c-amber-500);
 }
 
 .nav-link {
   font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--c-slate-300);
-  padding: 3px var(--space-2);
+  color: var(--c-slate-600);
+  padding: 4px var(--space-3);
   border-radius: var(--r-sm);
-  transition: color var(--t-fast);
+  transition: color var(--t-fast), background var(--t-fast);
+  font-family: var(--font-ui);
+  letter-spacing: 0.02em;
 }
 
-.nav-link:hover { color: #fff; }
-.nav-link--highlight { color: var(--c-amber-300); font-weight: 700; }
-.nav-link--highlight:hover { color: var(--c-amber-400); }
+.nav-link:hover { color: var(--c-slate-900); background: var(--c-amber-50); }
+.nav-link--highlight { color: var(--c-amber-500); font-weight: 700; }
+.nav-link--highlight:hover { color: var(--c-amber-400); background: var(--c-amber-50); }
 .nav-link--admin { color: var(--c-slate-400); }
-.nav-link--admin:hover { color: #fff; }
+.nav-link--admin:hover { color: var(--c-slate-700); background: var(--c-slate-200); }
 
 /* Active state — set by JS on every route change */
 .nav-link--active,
 .nav-btn.nav-link--active {
-  color: #fff !important;
-  background: rgba(251, 191, 36, 0.18);
-  outline: 1px solid rgba(251, 191, 36, 0.35);
-  border-radius: var(--r-sm);
+  color: var(--c-amber-500) !important;
+  background: var(--c-amber-50) !important;
+  outline: 1px solid var(--c-amber-200);
 }
 
 .nav-link--highlight.nav-link--active {
-  color: var(--c-amber-400) !important;
-  background: rgba(251, 191, 36, 0.22);
+  color: var(--c-amber-500) !important;
+  background: var(--c-amber-50) !important;
 }
 
-.nav-sep { color: var(--c-slate-600); font-size: var(--fs-xs); }
+.nav-sep { color: var(--c-slate-300); font-size: var(--fs-xs); margin-inline: var(--space-1); }
 
 /* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
@@ -313,6 +347,15 @@
   font-size: var(--fs-xs);
   margin-top: auto;
   border-top: 1px solid var(--c-slate-800);
+  position: relative;
+}
+
+/* Thin rose stripe on top of footer */
+.site-footer::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c-amber-400), transparent);
 }
 
 .footer-inner {
@@ -328,8 +371,22 @@
 
 .footer-logo {
   font-size: var(--fs-lg) !important;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: var(--space-3);
+}
+
+.footer-logo-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  font-family: var(--font-ui);
+}
+
+.footer-logo-text .logo-marvis {
+  color: var(--c-amber-300);
 }
 
 .footer-desc {
@@ -341,9 +398,10 @@
   font-weight: 800;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   font-size: 10px;
   margin-bottom: var(--space-3);
+  font-family: var(--font-ui);
 }
 
 .footer-links {
@@ -357,7 +415,7 @@
   transition: color var(--t-fast);
 }
 
-.footer-links a:hover { color: var(--c-amber-400); }
+.footer-links a:hover { color: var(--c-amber-300); }
 
 .footer-creds {
   margin-top: var(--space-3);
@@ -368,7 +426,7 @@
 .footer-creds code {
   font-family: var(--font-mono);
   background: var(--c-slate-800);
-  color: var(--c-amber-400);
+  color: var(--c-amber-300);
   padding: 1px 6px;
   border-radius: 4px;
   font-size: 10px;
